@@ -1,14 +1,23 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
-  <h1>Local Library Home</h1>
-  <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p>
-  <h2>Dynamic content</h2>
+  <h1>Local Calculator Home</h1>
+  <h3>Dynamic content</h3>
   <p>The library has the following record counts:</p>
   <ul>
-    <li><strong>Books:</strong> {{ num_books }}</li>
-    <li><strong>Copies:</strong> {{ num_instances }}</li>
-    <li><strong>Copies available:</strong> {{ num_instances_available }}</li>
-    <li><strong>Authors:</strong> {{ num_authors }}</li>
+    <li>Calculators: {{ num_calculators }}</li>
+    <li>Number of Clients: {{ num_clients }}</li>
+    <li>Licenses available: {{ num_licenses_available }}</li>
+    <li>Licenses unavailable: {{ num_licenses_unavailable }}</li>
+    <li>Number of Companies: {{ num_companies }}</li>
   </ul>
+  <h3>Calculators List</h3>
+  <ul>
+    {% for calculator in calculator_list %}
+      <li>{{ calculator.title }}</li>
+    {% endfor %}
+  </ul>
+  <h3>Amortizing Loan Test</h3>
+  <p>{{ pmt_test }}</p>
 {% endblock %}

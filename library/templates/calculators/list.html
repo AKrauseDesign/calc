@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Calculator List</h1>
+  {% if calculator_list %}
+  <ul>
+    {% for calculator in calculator_list %}
+      <li>
+        <a href="{{ calculator.get_absolute_url }}">{{ calculator.name }}</a> ({{calculator.owner}})
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no books in the library.</p>
+  {% endif %}
+{% endblock %}

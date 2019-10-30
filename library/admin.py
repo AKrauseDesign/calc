@@ -1,5 +1,5 @@
 from django.contrib import admin
-from library.models import Owner, Type, CalculatorLicense, FieldsBuilder, Company, Client, Calculator
+from library.models import Owner, Type, DefaultParameters, CalculatorLicense, FieldsBuilder, Company, Client, Calculator
 
 # Register your models here.
 @admin.register(Owner)
@@ -17,6 +17,18 @@ class OwnerAdmin(admin.ModelAdmin):
 class TypeAdmin(admin.ModelAdmin):
     list_display = 'name',
     list_display_links = 'name',
+
+
+@admin.register(DefaultParameters)
+class DefaultParametersAdmin(admin.ModelAdmin):
+    list_display = (
+        'title',
+        'default_rate',
+        'default_months',
+        'default_principal',
+        'id'
+    )
+    list_display_links = 'title',
 
 
 @admin.register(CalculatorLicense)

@@ -50,12 +50,31 @@ class FieldsBuilder(models.Model):
         return self.name
 
 
+class DefaultParameters(models.Model):
+    id = models.UUIDField(primary_key=True, default=uuid.uuid4, help_text='Unique ID for the default parameters ')
+    title = models.CharField(max_length=200)
+    default_rate = models.CharField(max_length=100)
+    default_months = models.CharField(max_length=200)
+    default_principal = models.CharField(max_length=1000)
+
+    class Meta:
+        verbose_name = "Default Values"
+        verbose_name_plural = "Default Values"
+
+    def __str__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return reverse('default-parameters', args=[str(self.id)])
+
+
 # FIXME: This model keeps breaking, please work on it a bit.
 class Calculator(models.Model):
     """Model representing a calculator (but not a specific copy of a calculator)."""
     title = models.CharField(max_length=200)
     summary = models.TextField(max_length=2000, help_text="Enter a brief description of the calculator")
-    calc_id = models.UUIDField("Calculator ID", primary_key=True, default=uuid.uuid4, help_text='Unique ID for this calculator')
+    calc_id = models.UUIDField("Calculator ID", primary_key=True, default=uuid.uuid4, help_text='Unique ID for this '
+                                                                                                'calculator')
     fields = models.ManyToManyField(FieldsBuilder)
 
     # ManyToManyField used because type can contain many calculators. Calculators can cover many types
@@ -71,7 +90,7 @@ class Calculator(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a detail record for this calculator."""
-        return reverse('calculator-detail', args=[str(self.id)])
+        return reverse('calculator-detail', args=[str(self.calc_id)])
 
 
 class Owner(models.Model):
@@ -87,7 +106,7 @@ class Owner(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a particular owner instance."""
-        return reverse('owner-detail', args=[str(self.id)])
+        return reverse('owner-detail', args=[str(self.first_name)])
 
     def __str__(self):
         """String for representing the Model object"""
@@ -105,7 +124,7 @@ class Company(models.Model):
         verbose_name_plural = "Companies"
 
     def get_absolute_url(self):
-        return reverse('company-detail', args=[str(self.id)])
+        return reverse('company-detail', args=[str(self.name)])
 
     def __str__(self):
         return f'{self.name}'
