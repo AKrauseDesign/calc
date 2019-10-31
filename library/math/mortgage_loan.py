@@ -23,10 +23,10 @@ class MortgageLoan:
         return np.arange(1 * self.t) + 1
 
     def __ipmt(self):
-        return np.ipmt(self.__fix_rate(), self.t, 1 * self.t, self.p)
+        return np.ipmt(self.r/12, self.__per(), 1 * self.t, self.p)
 
     def __ppmt(self):
-        return np.ppmt(self.__fix_rate(), self.t, 1 * self.t, self.p)
+        return np.ppmt(self.r/12, self.__per(), 1 * self.t, self.p)
 
     def pmt_data(self):
         graph_data = []
@@ -40,7 +40,7 @@ class MortgageLoan:
 
         for payment in self.__per():
             index = payment - 1
-            principal = self.p + self.__ppmt()
+            principal = self.p + self.__ppmt()[index]
             print(fmt.format(payment, self.__ppmt()[index], self.__ipmt()[index], principal))
 
     def build_bar_graph(self):

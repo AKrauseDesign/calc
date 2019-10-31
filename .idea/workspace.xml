@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6871c4c-d88a-457a-be2c-2f10521b955e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/andrewkrause.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/andrewkrause.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/math/mortgage_loan.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/math/mortgage_loan.py" afterDir="false" />
     </list>
@@ -47,7 +48,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.simple_interest_formula">
+  <component name="RunManager" selected="Python.mortgage_loan">
     <configuration default="true" type="PythonConfigurationType" factoryName="Python">
       <module name="calc" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -62,6 +63,28 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="true" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="mortgage_loan" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="calc" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/library/math" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/library/math/mortgage_loan.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="true" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -115,6 +138,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.mortgage_loan" />
         <item itemvalue="Python.simple_interest_formula" />
       </list>
     </recent_temporary>
@@ -129,7 +153,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572446934621</updated>
-      <workItem from="1572446937298" duration="25515000" />
+      <workItem from="1572446937298" duration="29356000" />
     </task>
     <servers />
   </component>
@@ -152,5 +176,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/calc$simple_interest_formula.coverage" NAME="simple_interest_formula Coverage Results" MODIFIED="1572461425423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/library/math" />
+    <SUITE FILE_PATH="coverage/calc$mortgage_loan.coverage" NAME="mortgage_loan Coverage Results" MODIFIED="1572557224000" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/library/math" />
   </component>
 </project>
