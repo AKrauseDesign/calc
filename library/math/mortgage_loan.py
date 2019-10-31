@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import locale
 plt.rcdefaults()
 
 
@@ -11,6 +12,9 @@ class MortgageLoan:
         self.p = principal
         self.calculations = []
 
+    def currency_formatting(self):
+        pass
+
     # converts the rate
     def __fix_rate(self):
         return self.r / 12
@@ -18,10 +22,10 @@ class MortgageLoan:
     def __per(self):
         return np.arange(1 * self.t) + 1
 
-    def __ipmt1(self):
+    def __ipmt(self):
         return np.ipmt(self.__fix_rate(), self.t, 1 * self.t, self.p)
 
-    def __ppmt1(self):
+    def __ppmt(self):
         return np.ppmt(self.__fix_rate(), self.t, 1 * self.t, self.p)
 
     def pmt_data(self):
@@ -36,8 +40,8 @@ class MortgageLoan:
 
         for payment in self.__per():
             index = payment - 1
-            principal = self.p + self.__ppmt1()
-            print(fmt.format(payment, self.__ppmt1()[index], self.__ipmt1()[index], principal))
+            principal = self.p + self.__ppmt()
+            print(fmt.format(payment, self.__ppmt()[index], self.__ipmt()[index], principal))
 
     def build_bar_graph(self):
         months = self.pmt_data()
@@ -51,3 +55,6 @@ class MortgageLoan:
         plt.ylabel('Months')
         plt.title('Mortgage Loan Payment Schedule')
         plt.show()
+
+    def get_math_data(self):
+        pass
