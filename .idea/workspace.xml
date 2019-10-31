@@ -2,21 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6871c4c-d88a-457a-be2c-2f10521b955e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/other.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library/migrations/0002_defaultparameters.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/library/templates/calculators/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/calc.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/calc.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/andrewkrause.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/library/math/mortgage_loan.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/calc/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/calc/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/math/simple_interest_formula.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/math/simple_interest_formula.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/library/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/library/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -142,7 +130,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1572446934621</updated>
-      <workItem from="1572446937298" duration="13538000" />
+      <workItem from="1572446937298" duration="22498000" />
     </task>
     <servers />
   </component>
