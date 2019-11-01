@@ -12,36 +12,25 @@ class MortgageLoan:
         self.p = principal
         self.calculations = []
 
-    def currency_formatting(self):
-        pass
-
     # converts the rate
     def __fix_rate(self):
         return self.r / 12
 
-    def __per(self):
+    def per(self):
         return np.arange(1 * self.t) + 1
 
-    def __ipmt(self):
-        return np.ipmt(self.r/12, self.__per(), 1 * self.t, self.p)
+    def ipmt(self):
+        return np.ipmt(self.r / 12, self.per(), 1 * self.t, self.p)
 
-    def __ppmt(self):
-        return np.ppmt(self.r/12, self.__per(), 1 * self.t, self.p)
+    def ppmt(self):
+        return np.ppmt(self.r / 12, self.per(), 1 * self.t, self.p)
 
     def pmt_data(self):
         graph_data = []
-        for payment in self.__per():
+        for payment in self.per():
             graph_data.append(payment)
 
         return graph_data
-
-    def pmt_schedule(self):
-        fmt = '{0:2d} {1:8.2f} {2:8.2f} {3:8.2f}'
-
-        for payment in self.__per():
-            index = payment - 1
-            principal = self.p + self.__ppmt()[index]
-            print(fmt.format(payment, self.__ppmt()[index], self.__ipmt()[index], principal))
 
     def build_bar_graph(self):
         months = self.pmt_data()
@@ -56,5 +45,42 @@ class MortgageLoan:
         plt.title('Mortgage Loan Payment Schedule')
         plt.show()
 
-    def get_math_data(self):
-        pass
+    def pmt_schedule(self):
+        fmt = '{0:2d}  {1:8.2f}  {2:8.2f}  Principal: {3:8.2f}'
+
+        for payment in self.per():
+            index = payment - 1
+            principal = self.p + self.ppmt()[index]
+            print(fmt.format(payment, self.ppmt()[index], self.ipmt()[index], principal))
+
+        return self.build_bar_graph()
+
+    def get_payment(self):
+        return np.pmt(self.r / 12, self.per(), 1 * self.t, self.p)
+
+    def get_interest(self):
+        return np.ipmt(self.r / 12, self.per(), 1 * self.t, self.p)
+
+    def get_other(self):
+        return np.ppmt(self.r / 12, self.per(), 1 * self.t, self.p)
+
+    def results(self):
+        fmt = '{0:2d} {1:8.2f} {2:8.2f} {3:8.2f}'
+        per = np.arange(1 * self.t) + 1
+        ppmt = np.ppmt(self.r / 12, self.per(), 1 * self.t, self.p)
+        ipmt = np.ipmt(self.r / 12, self.per(), 1 * self.t, self.p)
+        pmt = np.pmt(self.r / 12, 1 * self.t, self.p)
+        if not np.allclose(ipmt + ppmt, pmt):
+            raise Exception("These don\'t match")
+        else:
+            for payment in per:
+                index = payment - 1
+                principal = self.p + ppmt[index]
+                print(fmt.format(payment, ppmt[index], ipmt[index], principal))
+
+
+test_rate = 0.0824
+test_months = 12
+test_principal = 2500
+
+testMath = MortgageLoan(test_rate, test_months, test_principal)
