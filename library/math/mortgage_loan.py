@@ -70,12 +70,13 @@ class MortgageLoan:
         ppmt = np.ppmt(self.r / 12, self.per(), 1 * self.t, self.p)
         ipmt = np.ipmt(self.r / 12, self.per(), 1 * self.t, self.p)
         pmt = np.pmt(self.r / 12, 1 * self.t, self.p)
+        it_principal = self.p
         if not np.allclose(ipmt + ppmt, pmt):
             raise Exception("These don\'t match")
         else:
             for payment in per:
                 index = payment - 1
-                principal = self.p + ppmt[index]
+                principal = it_principal + ppmt[index]
                 print(fmt.format(payment, ppmt[index], ipmt[index], principal))
 
 
