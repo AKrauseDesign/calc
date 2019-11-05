@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e6871c4c-d88a-457a-be2c-2f10521b955e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/library/math/mortgage_loan.py" beforeDir="false" afterPath="$PROJECT_DIR$/library/math/mortgage_loan.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -161,7 +162,7 @@
       <updated>1572446934621</updated>
       <workItem from="1572446937298" duration="29591000" />
       <workItem from="1572622440853" duration="8337000" />
-      <workItem from="1572811159016" duration="81000" />
+      <workItem from="1572811159016" duration="137000" />
     </task>
     <servers />
   </component>
